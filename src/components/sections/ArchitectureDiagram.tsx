@@ -110,8 +110,8 @@ export function ArchitectureDiagram() {
           )}
         </AnimatePresence>
         <p className="mt-4 text-xs text-muted-foreground">
-          Hover or focus a node to see what it's responsible for — this is the
-          same architecture I'd walk through in a system design interview.
+          Hover or focus a node to see what it&apos;s responsible for — this is the
+          same architecture I&apos;d walk through in a system design interview.
         </p>
       </div>
     </div>

@@ -44,7 +44,7 @@ export function Contact() {
           <div className="relative grid gap-10 lg:grid-cols-2">
             <div>
               <p className="max-w-sm text-muted-foreground">
-                Open to backend and distributed-systems roles. If you've got a
+                Open to backend and distributed-systems roles. If you&apos;ve got a
                 system worth engineering well, my inbox is open.
               </p>
 
