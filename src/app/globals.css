@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 20% 9%;
+  --muted: 220 20% 96%;
+  --muted-foreground: 220 9% 40%;
+  --border: 220 16% 88%;
+  --surface: 0 0% 100%;
+  --accent: 217 91% 60%;
+  --accent-2: 262 83% 66%;
+}
+
+.dark {
+  --background: 222 32% 5%;
+  --foreground: 210 20% 96%;
+  --muted: 222 24% 11%;
+  --muted-foreground: 217 12% 63%;
+  --border: 222 20% 16%;
+  --surface: 222 28% 8%;
+  --accent: 217 91% 65%;
+  --accent-2: 262 83% 70%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings:
+    "cv02",
+    "cv03",
+    "cv04",
+    "cv11";
+}
+
+::selection {
+  background: hsl(var(--accent) / 0.35);
+  color: hsl(var(--foreground));
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Utility: glass card */
+.glass {
+  background: hsl(var(--surface) / 0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid hsl(var(--border) / 0.6);
+}
+
+/* Utility: gradient text */
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--accent)),
+    hsl(var(--accent-2)),
+    hsl(var(--accent))
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Utility: dotted grid backdrop */
+.bg-dot-grid {
+  background-image: radial-gradient(
+    hsl(var(--muted-foreground) / 0.25) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+/* Fine, hide native cursor only when the custom cursor is active */
+.cursor-none-desktop {
+  cursor: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
