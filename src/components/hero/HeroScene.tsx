@@ -19,7 +19,9 @@ export function HeroScene() {
       camera={{ position: [0, 0, 9], fov: 45 }}
       className="!absolute inset-0"
     >
-      <color attach="background" args={["transparent"]} />
+      {/* No scene.background — the canvas is transparent (gl alpha) so the
+          page's own dark background shows through. Setting a THREE color of
+          "transparent" is invalid and makes the scene opaque white. */}
       <fog attach="fog" args={["#0a0d16", 8, 16]} />
       <ambientLight intensity={0.4} />
       <pointLight position={[6, 4, 6]} intensity={80} color="#6d8bff" />
