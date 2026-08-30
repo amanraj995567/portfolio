@@ -23,6 +23,7 @@ const navItems: NavItem[] = [
   { label: "Experience", hash: "#experience" },
   { label: "Skills", hash: "#skills" },
   { label: "Featured Project — Prompt2Prod", hash: "#project" },
+  { label: "Project — Agentic Blog Generator", hash: "#projects" },
   { label: "Achievements", hash: "#achievements" },
   { label: "Resume", hash: "#resume" },
   { label: "Contact", hash: "#contact" },

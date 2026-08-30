@@ -26,16 +26,22 @@ export function About() {
               Education
             </h3>
             <ul className="space-y-6">
-              {education.map((edu) => (
-                <li key={edu.school} className="border-l-2 border-border pl-4">
-                  <p className="text-sm font-medium text-foreground">{edu.school}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{edu.credential}</p>
-                  <p className="mt-1 text-xs text-muted-foreground/80">
-                    {edu.start === edu.end ? edu.start : `${edu.start} — ${edu.end}`} ·{" "}
-                    {edu.detail}
-                  </p>
-                </li>
-              ))}
+              {education.map((edu) => {
+                const years =
+                  edu.start === edu.end ? edu.start : `${edu.start} — ${edu.end}`;
+                const detail = "detail" in edu ? edu.detail : undefined;
+                return (
+                  <li key={edu.school} className="border-l-2 border-border pl-4">
+                    <p className="text-sm font-medium text-foreground">{edu.school}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {edu.credential}
+                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground/80">
+                      {detail ? `${years} · ${detail}` : years}
+                    </p>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </Reveal>

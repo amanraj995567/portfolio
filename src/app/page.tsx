@@ -3,6 +3,7 @@ import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
 import { Skills } from "@/components/sections/Skills";
 import { FeaturedProject } from "@/components/sections/FeaturedProject";
+import { OtherProjects } from "@/components/sections/OtherProjects";
 import { Achievements } from "@/components/sections/Achievements";
 import { CodingProfiles } from "@/components/sections/CodingProfiles";
 import { ResumeSection } from "@/components/sections/ResumeSection";
@@ -35,6 +36,7 @@ export default function Home() {
       <Experience />
       <Skills />
       <FeaturedProject />
+      <OtherProjects />
       <Achievements />
       <CodingProfiles />
       <ResumeSection />

@@ -83,7 +83,6 @@ export const education = [
   {
     school: "National Institute of Technology, Delhi",
     credential: "B.Tech, Electrical and Electronics Engineering",
-    detail: "CGPA: 7.08",
     start: "2021",
     end: "2025",
   },
@@ -110,6 +109,17 @@ export const skills = [
       "Express.js",
       "REST APIs",
       "Microservices",
+    ],
+  },
+  {
+    category: "Agentic AI",
+    items: [
+      "LangGraph",
+      "LangChain",
+      "Multi-Agent Systems",
+      "RAG",
+      "LLM Tool Calling",
+      "LangSmith",
     ],
   },
   {
@@ -282,6 +292,36 @@ export const featuredProject = {
     },
   ],
 } as const;
+
+/**
+ * Additional projects rendered as cards under the featured build.
+ * Same shape as `featuredProject` minus the architecture diagram.
+ */
+export const projects = [
+  {
+    name: "Agentic Blog Generator",
+    subtitle: "Multi-Agent Blog Generation System",
+    link: "https://github.com/amanraj995567",
+    description:
+      "A LangGraph multi-agent pipeline that takes a topic, routes it through web research, and writes a full blog — planning sections, generating them in parallel, and surviving individual task failures without stalling the run.",
+    bullets: [
+      "Built a multi-agent blog generation system using LangGraph, where an LLM routes topics to web research and generates planned blog sections in parallel.",
+      "Designed a fault-tolerant image generation workflow with concurrent image creation, independent task failures, and placeholder fallbacks to keep the pipeline running.",
+      "Used Pydantic structured outputs for reliable LLM responses, Tavily for web research, and LangSmith for end-to-end tracing.",
+      "Built a Streamlit UI with automated AppTest validation covering the end-to-end generation flow.",
+    ],
+    stack: [
+      "Python",
+      "LangGraph",
+      "LangChain",
+      "Gemini",
+      "Tavily",
+      "LangSmith",
+      "Pydantic",
+      "Streamlit",
+    ],
+  },
+] as const;
 
 export const achievements = [
   {
