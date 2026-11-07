@@ -18,10 +18,10 @@ export function CodingProfiles() {
       title="Coding profiles"
       alt
     >
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {codingProfiles.map((profile, i) => {
           const Icon = icons[profile.icon] ?? Github;
-          const isPlaceholder = profile.href === "#";
+          const isPlaceholder = (profile.href as string) === "#";
           return (
             <Reveal key={profile.name} delay={i * 0.05}>
               <a

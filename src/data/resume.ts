@@ -5,17 +5,14 @@
  * (Aman_Raj_Resume.pdf). Nothing in this file is invented — if a resume
  * detail changes, update it here and every section of the site picks it up.
  *
- * NOTE: The resume PDF's "LeetCode" / "Codeforces" links did not expose
- * their target URLs in the extracted text, so those two `href` values below
- * are left as "#" placeholders. Fill in your actual profile URLs before
- * shipping. LinkedIn / GitHub / Portfolio URLs were confirmed from the live
- * site (amanraj995567.github.io).
+ * All profile and project URLs below are taken from the hyperlinks embedded
+ * in the resume PDF.
  */
 
 export const personal = {
   name: "Aman Raj",
-  title: "Software Engineer",
-  roles: ["Backend Engineer", "Distributed Systems", "AI Systems Builder"],
+  title: "Backend Software Engineer",
+  roles: ["Backend Engineer", "Distributed Systems", "GenAI"],
   tagline:
     "Building scalable distributed systems, AI-powered applications, and production-grade software.",
   location: "Gurugram, India",
@@ -25,17 +22,16 @@ export const personal = {
   links: {
     linkedin: "https://linkedin.com/in/aman9955profile",
     github: "https://github.com/amanraj995567",
-    portfolio: "https://amanraj995567.github.io",
-    leetcode: "#",
-    codeforces: "#",
+    portfolio: "https://aman-raj-dev.vercel.app",
+    leetcode: "https://leetcode.com/u/ShivOm_51/",
   },
 } as const;
 
 export const about = {
   paragraphs: [
     "I studied Electrical and Electronics Engineering at NIT Delhi, but most of my actual education happened in parallel — grinding data structures, operating systems, and system design on the side while competitive programming taught me to think in edge cases before they became production incidents.",
-    "That habit followed me into industry. At Skeps, I own the REST APIs behind an end-to-end loan origination workflow — eligibility, offers, intake, status tracking — and I've learned that the interesting engineering problems are rarely the feature itself; they're the query that's fine at 10 rows and falls over at 10 million, the monitoring gap that turns a five-minute fix into a two-hour fire drill, the onboarding flow that quietly needs an engineer every single time.",
-    "I built an internal Sentry monitoring service that cut triage effort by 90%, rebuilt slow SQL paths and added Redis caching to bring latency down 30%, and shipped a self-service merchant onboarding platform that took a multi-hour manual process down to minutes — no engineer required.",
+    "That habit followed me into industry. At Skeps, a point-of-sale consumer financing platform, I build the backend services behind an end-to-end loan origination pipeline — eligibility, offers, application processing, transaction status tracking — serving multiple lenders and merchants, and I've learned that the interesting engineering problems are rarely the feature itself; they're the query that's fine at 10 rows and falls over at 10 million, the monitoring gap that turns a five-minute fix into a two-hour fire drill, the onboarding flow that quietly needs an engineer every single time.",
+    "I built an internal Sentry monitoring service that cut triage effort by 90%, rebuilt slow SQL paths and added Redis caching to bring latency down 30%, and shipped a self-service merchant onboarding platform that took a multi-hour manual process down to minutes — no engineer required. Most recently I built an AI pull request review agent with LangChain and LangGraph that handles first-pass code reviews.",
     "Outside of work, I architected Prompt2Prod, a distributed AI coding platform with six Spring Cloud microservices, a Qdrant-backed RAG pipeline, and Kubernetes-isolated code execution — a chance to apply distributed-systems thinking to the AI infrastructure problems I find most interesting right now.",
     "I like systems that stay correct under load, code that's boring in the way that reliable things are boring, and the kind of problems where the fix is a schema migration and an index, not a rewrite.",
   ],
@@ -46,20 +42,20 @@ export type ExperienceBullet = string;
 export const experience = [
   {
     company: "Skeps",
-    role: "Software Engineer",
+    role: "Software Engineer I",
     location: "Gurugram, India",
     start: "June 2025",
     end: "Present",
     current: true,
     summary:
-      "Own REST APIs across the loan origination workflow — eligibility, offers, intake, and status tracking.",
+      "Backend services for a point-of-sale consumer financing platform — the loan origination pipeline from eligibility to transaction status, serving multiple lenders and merchants.",
     bullets: [
-      "Designed and maintained REST APIs powering the end-to-end loan origination workflow (eligibility evaluation, offer generation, application intake, status tracking) using Node.js, Express.js, and MySQL.",
-      "Engineered an internal Sentry monitoring service that scans production alerts across microservices and generates daily service-wise reports, replacing manual monitoring and reducing triage effort by 90%.",
-      "Reduced API response latency by 30% by optimizing complex SQL queries, adding targeted database indexes, and implementing Redis caching, improving throughput for high-volume loan-processing APIs.",
-      "Developed a self-service merchant onboarding platform that automated merchant, store, and environment provisioning, cutting onboarding time from hours to minutes and eliminating manual engineering intervention.",
-      "Integrated multiple third-party fraud detection and identity verification (KYC) providers into the loan approval pipeline, enabling faster verification and stronger fraud screening.",
-      "Implemented authentication and authorization using JWT, RBAC, and password hashing across lender, merchant, and admin portals, working across multiple microservices in an event-driven architecture.",
+      "Built backend services powering the end-to-end loan origination pipeline (eligibility, offer generation, application processing, transaction status tracking) in Node.js, Express.js, and MySQL, serving multiple lenders and merchants.",
+      "Cut latency of high-volume financial transaction APIs by ~30% through SQL query optimization, targeted database indexing, and Redis caching on hot read paths.",
+      "Engineered a self-service merchant onboarding platform automating merchant, store, and environment provisioning, reducing onboarding time from hours to minutes with zero manual engineering effort.",
+      "Built an internal production monitoring service aggregating Sentry alerts across microservices into daily service-wise reports, reducing incident triage effort by 90%.",
+      "Developed an AI pull request review agent with LangChain and LangGraph that analyzes code diffs, flags potential bugs and standards violations, and posts structured review comments to automate first-pass reviews.",
+      "Secured lender, merchant, and admin portals with JWT authentication, role-based access control (RBAC), and salted password hashing across 3 microservices in an event-driven architecture.",
     ],
     stack: [
       "Node.js",
@@ -67,13 +63,15 @@ export const experience = [
       "MySQL",
       "Redis",
       "Sentry",
+      "LangChain",
+      "LangGraph",
       "JWT",
       "RBAC",
       "Microservices",
     ],
     metrics: [
       { label: "Triage effort", value: "-90%" },
-      { label: "API latency", value: "-30%" },
+      { label: "API latency", value: "~-30%" },
       { label: "Onboarding time", value: "hrs → mins" },
     ],
   },
@@ -98,12 +96,13 @@ export const education = [
 export const skills = [
   {
     category: "Languages",
-    items: ["Java", "JavaScript", "Python", "C++"],
+    items: ["Java", "JavaScript", "Python", "C++", "SQL"],
   },
   {
     category: "Backend",
     items: [
       "Spring Boot",
+      "Spring Cloud",
       "Spring Security",
       "Node.js",
       "Express.js",
@@ -112,7 +111,7 @@ export const skills = [
     ],
   },
   {
-    category: "Agentic AI",
+    category: "GenAI",
     items: [
       "LangGraph",
       "LangChain",
@@ -123,12 +122,13 @@ export const skills = [
     ],
   },
   {
-    category: "Cloud & Infra",
+    category: "Distributed & Cloud",
     items: [
       "Docker",
       "Kubernetes (GKE)",
       "Kafka",
       "Redis",
+      "AWS",
       "GitHub Actions",
       "Jenkins",
       "CI/CD",
@@ -148,7 +148,7 @@ export const skills = [
     category: "Core CS",
     items: [
       "Data Structures & Algorithms",
-      "OOP",
+      "OOD",
       "DBMS",
       "Operating Systems",
       "Computer Networks",
@@ -159,7 +159,7 @@ export const skills = [
 export const featuredProject = {
   name: "Prompt2Prod",
   subtitle: "Distributed AI Code Assistant Platform",
-  link: "https://github.com/amanraj995567",
+  link: "https://github.com/amanraj995567/distributed-promt2prod",
   description:
     "A distributed AI coding platform spanning six Java / Spring Cloud microservices, built to ingest a codebase, reason over it with an LLM, and run the generated code safely in an isolated sandbox — end to end.",
   bullets: [
@@ -301,13 +301,13 @@ export const projects = [
   {
     name: "Agentic Blog Generator",
     subtitle: "Multi-Agent Blog Generation System",
-    link: "https://github.com/amanraj995567",
+    link: "https://github.com/amanraj995567/agentic-blog-generator",
     description:
       "A LangGraph multi-agent pipeline that takes a topic, routes it through web research, and writes a full blog — planning sections, generating them in parallel, and surviving individual task failures without stalling the run.",
     bullets: [
-      "Built a multi-agent blog generation system using LangGraph, where an LLM routes topics to web research and generates planned blog sections in parallel.",
-      "Designed a fault-tolerant image generation workflow with concurrent image creation, independent task failures, and placeholder fallbacks to keep the pipeline running.",
-      "Used Pydantic structured outputs for reliable LLM responses, Tavily for web research, and LangSmith for end-to-end tracing.",
+      "Orchestrated a multi-agent LangGraph workflow for planning, Tavily web research, and drafting, with conditional routing, parallel section generation via Send fan-out, and custom state reducers.",
+      "Isolated image generation in a nested subgraph with per-task failure isolation and fallbacks, so provider errors degrade output instead of failing the run.",
+      "Enforced typed I/O with Pydantic structured outputs and traced every run end-to-end with LangSmith.",
       "Built a Streamlit UI with automated AppTest validation covering the end-to-end generation flow.",
     ],
     stack: [
@@ -346,7 +346,7 @@ export const achievements = [
     value: 42,
     suffix: "",
     label: "All India Rank, Naukri.com Aptitude Test",
-    detail: "Out of 3,00,000 students",
+    detail: "Among 300,000+ candidates",
   },
   {
     value: 2,
@@ -359,13 +359,13 @@ export const achievements = [
     value: 1.5,
     suffix: "%",
     label: "Top percentile, JEE Advanced",
-    detail: "2021, among 1M+ candidates",
+    detail: "2021",
     topPercent: true,
   },
 ] as const;
 
 export const leadership = {
-  headline: "Team captain, NIT Delhi",
+  headline: "Represented NIT Delhi",
   detail: "All India Inter-NIT Cricket Tournament",
 };
 
@@ -384,14 +384,8 @@ export const codingProfiles = [
   },
   {
     name: "LeetCode",
-    handle: "Knight · 1857 rating",
+    handle: "ShivOm_51 · Knight · 1857",
     href: personal.links.leetcode,
     icon: "leetcode",
-  },
-  {
-    name: "Codeforces",
-    handle: "Competitive programmer",
-    href: personal.links.codeforces,
-    icon: "codeforces",
   },
 ] as const;
